@@ -1,0 +1,26 @@
+{
+    "name": "orh/tapd",
+    "description": "Tencent tapd api",
+    "keywords": [
+        "tencent",
+        "tapd",
+        "api"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "orh",
+            "email": "ouronghuang@dingtalk.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "~6.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orh\\Tapd\\": "src/"
+        }
+    }
+}
