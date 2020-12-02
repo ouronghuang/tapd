@@ -20,6 +20,7 @@ class Tapd
         'relation',
         'story',
         'task',
+        'workflow',
     ];
 
     /**
