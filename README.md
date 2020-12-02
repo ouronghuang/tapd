@@ -32,8 +32,11 @@ $ composer require orh/tapd
 
 1. 初始化
 
-```
+```php
 use Orh\Tapd\Tapd;
+
+$apiUser = '';
+$apiPassword = '';
 
 $tapd = new Tapd();
 $tapd->setHttp($apiUser, $apiPassword);
@@ -41,8 +44,11 @@ $tapd->setHttp($apiUser, $apiPassword);
 
 2. 按模块使用
 
-```
+```php
 // $tapd->{$module}->{$method}();
+
+$data = [];
+$query = [];
 
 $tapd->boardcard->store($data);
 $tapd->bug->getLinkBugs($query);
