@@ -1,16 +1,9 @@
 <?php
 
-namespace Orh\Tapd;
+namespace Orh\Tapd\Modules;
 
 class Story extends Base
 {
-    protected $client = null;
-
-    public function __construct(Http $client)
-    {
-        $this->client = $client;
-    }
-
     /**
      * 获取需求接口
      * @url https://www.tapd.cn/help/view#1120003271001003102
@@ -23,7 +16,7 @@ class Story extends Base
     {
         $uri = 'stories';
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -38,7 +31,7 @@ class Story extends Base
     {
         $uri = 'stories/count';
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -59,7 +52,7 @@ class Story extends Base
         ];
         $this->validate($data, $rules);
 
-        return $this->client->post($uri, $data);
+        return $this->http->post($uri, $data);
     }
 
     /**
@@ -80,7 +73,7 @@ class Story extends Base
         ];
         $this->validate($data, $rules);
 
-        return $this->client->post($uri, $data);
+        return $this->http->post($uri, $data);
     }
 
     /**
@@ -100,7 +93,7 @@ class Story extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -121,7 +114,7 @@ class Story extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -141,7 +134,7 @@ class Story extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -161,6 +154,6 @@ class Story extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 }

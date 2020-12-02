@@ -1,16 +1,9 @@
 <?php
 
-namespace Orh\Tapd;
+namespace Orh\Tapd\Modules;
 
 class Bug extends Base
 {
-    protected $client = null;
-
-    public function __construct(Http $client)
-    {
-        $this->client = $client;
-    }
-
     /**
      * 获取缺陷接口
      * @url https://www.tapd.cn/help/view#1120003271001003101
@@ -28,7 +21,7 @@ class Bug extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -48,7 +41,7 @@ class Bug extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -69,7 +62,7 @@ class Bug extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 
     /**
@@ -90,7 +83,7 @@ class Bug extends Base
         ];
         $this->validate($data, $rules);
 
-        return $this->client->post($uri, $data);
+        return $this->http->post($uri, $data);
     }
 
     /**
@@ -111,7 +104,7 @@ class Bug extends Base
         ];
         $this->validate($data, $rules);
 
-        return $this->client->post($uri, $data);
+        return $this->http->post($uri, $data);
     }
 
     /**
@@ -131,6 +124,6 @@ class Bug extends Base
         ];
         $this->validate($query, $rules);
 
-        return $this->client->get($uri, $query);
+        return $this->http->get($uri, $query);
     }
 }
