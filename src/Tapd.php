@@ -16,6 +16,7 @@ class Tapd
     protected $modules = [
         'bug',
         'iteration',
+        'relation',
         'story',
         'task',
     ];
