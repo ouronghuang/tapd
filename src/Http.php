@@ -3,7 +3,6 @@
 namespace Orh\Tapd;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use Orh\Tapd\Exceptions\{HttpException, RequestException};
 
 class Http
@@ -52,6 +51,7 @@ class Http
         $authKey = base64_encode($authKey);
 
         return [
+            'Accept' => 'application/json',
             'Authorization' => "Basic {$authKey}",
         ];
     }
@@ -64,8 +64,7 @@ class Http
      * @param array  $options 请求项
      *
      * @return array
-     * @throws GuzzleException
-     * @throws HttpException
+     * @throws
      */
     public function request(string $method = 'GET', string $uri = '', array $options = []): array
     {
@@ -90,6 +89,7 @@ class Http
      * @param array  $query 表单参数
      *
      * @return array
+     * @throws
      */
     public function get(string $uri = '', array $query = []): array
     {
@@ -108,6 +108,7 @@ class Http
      * @param array  $data 请求项
      *
      * @return array
+     * @throws
      */
     public function post(string $uri = '', array $data = []): array
     {
