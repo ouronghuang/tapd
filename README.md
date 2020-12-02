@@ -1,5 +1,5 @@
 <h1 align="center">
-    Tencent Tapd Api For PHP.
+    Tencent Tapd Api For PHP
 </h1>
 
 <p align="center">
@@ -20,7 +20,7 @@
     </a>
 </p>
 
-安装 [TAPD API 文档](https://www.tapd.cn/help/view#1120003271001002318) 实现了所有接口
+按照 [TAPD API 文档](https://www.tapd.cn/help/view#1120003271001002318) 实现了所有接口
 
 ## 安装
 
