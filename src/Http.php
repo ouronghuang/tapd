@@ -76,7 +76,13 @@ class Http
                 throw new RequestException($result['info']);
             }
 
-            return $result['data'];
+            $data = $result['data'];
+
+            if (! is_array($result['data'])) {
+                return $data ? compact('data') : [];
+            }
+
+            return $data;
         } catch (\Exception $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
