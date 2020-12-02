@@ -15,6 +15,7 @@ class Tapd
      */
     protected $modules = [
         'bug',
+        'comment',
         'iteration',
         'relation',
         'story',
