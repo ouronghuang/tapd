@@ -23,7 +23,7 @@ class Base
             }
 
             if (! $arguments[$v]) {
-                throw new EmptyArgumentException("The {$v} field is not empty.");
+                throw new EmptyArgumentException("The {$v} field is empty.");
             }
         }
     }

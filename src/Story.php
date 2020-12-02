@@ -87,31 +87,31 @@ class Story extends Base
      * 获取需求自定义字段配置
      * @url https://www.tapd.cn/help/view#1120003271001001456
      *
-     * @param array $data
+     * @param array $query
      *
      * @return array
      */
-    public function storiesCustomFieldsSettings(array $data): array
+    public function storiesCustomFieldsSettings(array $query): array
     {
         $uri = 'stories/custom_fields_settings';
 
         $rules = [
             'workspace_id',
         ];
-        $this->validate($data, $rules);
+        $this->validate($query, $rules);
 
-        return $this->client->get($uri, $data);
+        return $this->client->get($uri, $query);
     }
 
     /**
      * 获取需求与其它需求的所有关联关系
      * @url https://www.tapd.cn/help/view#1120003271001002372
      *
-     * @param array $data
+     * @param array $query
      *
      * @return array
      */
-    public function storiesGetLinkStories(array $data): array
+    public function storiesGetLinkStories(array $query): array
     {
         $uri = 'stories/get_link_stories';
 
@@ -119,48 +119,48 @@ class Story extends Base
             'workspace_id',
             'story_id',
         ];
-        $this->validate($data, $rules);
+        $this->validate($query, $rules);
 
-        return $this->client->get($uri, $data);
+        return $this->client->get($uri, $query);
     }
 
     /**
      * 获取需求变更历史接口
      * @url https://www.tapd.cn/help/view#1120003271001003048
      *
-     * @param array $data
+     * @param array $query
      *
      * @return array
      */
-    public function storyChanges(array $data): array
+    public function storyChanges(array $query): array
     {
         $uri = 'story_changes';
 
         $rules = [
             'workspace_id',
         ];
-        $this->validate($data, $rules);
+        $this->validate($query, $rules);
 
-        return $this->client->get($uri, $data);
+        return $this->client->get($uri, $query);
     }
 
     /**
      * 获取需求变更次数
      * @url https://www.tapd.cn/help/view#1120003271001001496
      *
-     * @param array $data
+     * @param array $query
      *
      * @return array
      */
-    public function storyChangesCount(array $data): array
+    public function storyChangesCount(array $query): array
     {
         $uri = 'story_changes/count';
 
         $rules = [
             'workspace_id',
         ];
-        $this->validate($data, $rules);
+        $this->validate($query, $rules);
 
-        return $this->client->get($uri, $data);
+        return $this->client->get($uri, $query);
     }
 }
