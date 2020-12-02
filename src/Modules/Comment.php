@@ -12,7 +12,7 @@ class Comment extends Base
      *
      * @return array
      */
-    public function comments(array $query): array
+    public function list(array $query): array
     {
         $uri = 'comments';
 
@@ -32,7 +32,7 @@ class Comment extends Base
      *
      * @return array
      */
-    public function commentsCount(array $query): array
+    public function count(array $query): array
     {
         $uri = 'comments/count';
 
@@ -52,7 +52,7 @@ class Comment extends Base
      *
      * @return array
      */
-    public function commentsStore(array $data): array
+    public function store(array $data): array
     {
         $uri = 'comments';
 
@@ -76,7 +76,7 @@ class Comment extends Base
      *
      * @return array
      */
-    public function commentsUpdate(array $data): array
+    public function update(array $data): array
     {
         $uri = 'comments';
 

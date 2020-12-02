@@ -12,7 +12,7 @@ class Relation extends Base
      *
      * @return array
      */
-    public function relations(array $query): array
+    public function list(array $query): array
     {
         $uri = 'relations';
 

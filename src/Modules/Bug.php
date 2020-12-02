@@ -12,7 +12,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugs(array $query): array
+    public function list(array $query): array
     {
         $uri = 'bugs';
 
@@ -32,7 +32,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugsCount(array $query): array
+    public function count(array $query): array
     {
         $uri = 'bugs/count';
 
@@ -52,7 +52,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugsGroupCount(array $query): array
+    public function groupCount(array $query): array
     {
         $uri = 'bugs/group_count';
 
@@ -73,7 +73,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugsStore(array $data): array
+    public function store(array $data): array
     {
         $uri = 'bugs';
 
@@ -94,7 +94,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugsUpdate(array $data): array
+    public function update(array $data): array
     {
         $uri = 'bugs';
 
@@ -115,7 +115,7 @@ class Bug extends Base
      *
      * @return array
      */
-    public function bugsCustomFieldsSettings(array $query): array
+    public function customFieldsSettings(array $query): array
     {
         $uri = 'bugs/custom_fields_settings';
 

@@ -12,7 +12,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function stories(array $query = []): array
+    public function list(array $query = []): array
     {
         $uri = 'stories';
 
@@ -27,7 +27,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storiesCount(array $query = []): array
+    public function count(array $query = []): array
     {
         $uri = 'stories/count';
 
@@ -42,7 +42,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storiesStore(array $data): array
+    public function store(array $data): array
     {
         $uri = 'stories';
 
@@ -63,7 +63,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storiesUpdate(array $data): array
+    public function update(array $data): array
     {
         $uri = 'stories';
 
@@ -84,7 +84,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storiesCustomFieldsSettings(array $query): array
+    public function customFieldsSettings(array $query): array
     {
         $uri = 'stories/custom_fields_settings';
 
@@ -104,7 +104,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storiesGetLinkStories(array $query): array
+    public function getLinkStories(array $query): array
     {
         $uri = 'stories/get_link_stories';
 
@@ -125,7 +125,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storyChanges(array $query): array
+    public function changes(array $query): array
     {
         $uri = 'story_changes';
 
@@ -145,7 +145,7 @@ class Story extends Base
      *
      * @return array
      */
-    public function storyChangesCount(array $query): array
+    public function changesCount(array $query): array
     {
         $uri = 'story_changes/count';
 

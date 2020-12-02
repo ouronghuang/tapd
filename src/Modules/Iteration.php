@@ -12,7 +12,7 @@ class Iteration extends Base
      *
      * @return array
      */
-    public function iterations(array $query): array
+    public function list(array $query): array
     {
         $uri = 'iterations';
 
@@ -32,7 +32,7 @@ class Iteration extends Base
      *
      * @return array
      */
-    public function iterationsCount(array $query): array
+    public function count(array $query): array
     {
         $uri = 'iterations/count';
 
@@ -52,7 +52,7 @@ class Iteration extends Base
      *
      * @return array
      */
-    public function iterationsStore(array $data): array
+    public function store(array $data): array
     {
         $uri = 'iterations';
 
@@ -76,7 +76,7 @@ class Iteration extends Base
      *
      * @return array
      */
-    public function iterationsUpdate(array $data): array
+    public function update(array $data): array
     {
         $uri = 'iterations';
 
@@ -98,7 +98,7 @@ class Iteration extends Base
      *
      * @return array
      */
-    public function iterationsCustomFieldsSettings(array $query): array
+    public function customFieldsSettings(array $query): array
     {
         $uri = 'iterations/custom_fields_settings';
 

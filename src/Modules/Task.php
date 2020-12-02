@@ -12,7 +12,7 @@ class Task extends Base
      *
      * @return array
      */
-    public function tasks(array $query): array
+    public function list(array $query): array
     {
         $uri = 'tasks';
 
@@ -32,7 +32,7 @@ class Task extends Base
      *
      * @return array
      */
-    public function tasksCount(array $query): array
+    public function count(array $query): array
     {
         $uri = 'tasks/count';
 
@@ -52,7 +52,7 @@ class Task extends Base
      *
      * @return array
      */
-    public function tasksStore(array $data): array
+    public function store(array $data): array
     {
         $uri = 'tasks';
 
@@ -74,7 +74,7 @@ class Task extends Base
      *
      * @return array
      */
-    public function tasksUpdate(array $data): array
+    public function update(array $data): array
     {
         $uri = 'tasks';
 
@@ -95,7 +95,7 @@ class Task extends Base
      *
      * @return array
      */
-    public function tasksCustomFieldsSettings(array $query): array
+    public function customFieldsSettings(array $query): array
     {
         $uri = 'tasks/custom_fields_settings';
 
