@@ -4,7 +4,7 @@ namespace Orh\Tapd;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Psr\Http\Message\ResponseInterface;
+use Orh\Tapd\Exceptions\{HttpException, RequestException};
 
 class Http
 {
@@ -20,7 +20,7 @@ class Http
      *
      * @var Client
      */
-    public $client = null;
+    protected $client = null;
 
     /**
      * 初始化设置
@@ -57,33 +57,29 @@ class Http
     }
 
     /**
-     * 返回方法大写形式
-     *
-     * @param string $method 方法
-     *
-     * @return string
-     */
-    protected function getMethod(string $method): string
-    {
-        return strtoupper($method);
-    }
-
-    /**
      * 基础请求
      *
      * @param string $method 请求方法
      * @param string $uri 请求 uri
      * @param array  $options 请求项
      *
-     * @return ResponseInterface
+     * @return array
      * @throws GuzzleException
+     * @throws HttpException
      */
-    public function request(string $method = 'GET', string $uri = '', array $options = []): ResponseInterface
+    public function request(string $method = 'GET', string $uri = '', array $options = []): array
     {
         try {
-            return $this->client->request($method, $uri, $options);
-        } catch (\Throwable $e) {
-            return [];
+            $response = $this->client->request($method, $uri, $options);
+            $result = json_decode($response->getBody(), true);
+
+            if ($result['status'] != 1) {
+                throw new RequestException($result['info']);
+            }
+
+            return $result['data'];
+        } catch (\Exception $e) {
+            throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
     }
 
@@ -91,13 +87,16 @@ class Http
      * GET 请求
      *
      * @param string $uri 请求 uri
-     * @param array  $options 请求项
+     * @param array  $query 表单参数
      *
      * @return array
      */
-    public function get(string $uri = '', array $options = []): array
+    public function get(string $uri = '', array $query = []): array
     {
-        $method = $this->getMethod(__FUNCTION__);
+        $method = 'GET';
+        $options = [
+            'query' => $query,
+        ];
 
         return $this->request($method, $uri, $options);
     }
@@ -106,13 +105,16 @@ class Http
      * POST 请求
      *
      * @param string $uri 请求 uri
-     * @param array  $options 请求项
+     * @param array  $data 请求项
      *
      * @return array
      */
-    public function post(string $uri = '', array $options = []): array
+    public function post(string $uri = '', array $data = []): array
     {
-        $method = $this->getMethod(__FUNCTION__);
+        $method = 'POST';
+        $options = [
+            'json' => $data,
+        ];
 
         return $this->request($method, $uri, $options);
     }

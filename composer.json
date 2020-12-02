@@ -8,19 +8,28 @@
     ],
     "type": "library",
     "license": "MIT",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "~6.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8.5.0",
+        "mockery/mockery": "~1.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orh\\Tapd\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orh\\Tapd\\Tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "orh",
             "email": "ouronghuang@dingtalk.com"
         }
-    ],
-    "require": {
-        "php": "^7.0",
-        "guzzlehttp/guzzle": "~6.5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Orh\\Tapd\\": "src/"
-        }
-    }
+    ]
 }
