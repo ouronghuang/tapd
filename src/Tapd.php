@@ -2,30 +2,36 @@
 
 namespace Orh\Tapd;
 
-use Orh\Tapd\Modules\{Bug, Story, Task};
+use Orh\Tapd\Exceptions\InvalidModuleException;
+use Orh\Tapd\Exceptions\NullException;
+use Orh\Tapd\Modules\Base;
 
 class Tapd
 {
     /**
-     * 缺陷类
+     * 可用模块
      *
-     * @var Bug
+     * @var array
      */
-    public $bug = null;
-    
-    /**
-     * 需求类
-     *
-     * @var Story
-     */
-    public $story = null;
+    protected $modules = [
+        'bug',
+        'story',
+        'task',
+    ];
 
     /**
-     * 任务类
+     * 绑定模块
      *
-     * @var Task
+     * @var array
      */
-    public $task = null;
+    protected $binds = [];
+
+    /**
+     * HTTP 实例
+     *
+     * @var Http
+     */
+    protected $http = null;
 
     /**
      * 初始化设置
@@ -35,12 +41,37 @@ class Tapd
      *
      * @return void
      */
-    public function __construct(string $apiUser, string $apiPassword)
+    public function setHttp(string $apiUser, string $apiPassword)
     {
-        $http = new Http($apiUser, $apiPassword);
+        $this->http = new Http($apiUser, $apiPassword);
+        $this->binds = [];
+    }
 
-        $this->bug = new Bug($http);
-        $this->story = new Story($http);
-        $this->task = new Task($http);
+    /**
+     * 动态加载模块
+     *
+     * @param string $module
+     *
+     * @return Base
+     * @throws
+     */
+    public function __get(string $module): Base
+    {
+        $module = strtolower($module);
+
+        if (! in_array($module, $this->modules)) {
+            throw new InvalidModuleException("Undefined module: {$module}.");
+        }
+
+        if (! $this->http) {
+            throw new NullException('Http attribute is null, please set http first.');
+        }
+
+        if (! isset($this->binds[$module])) {
+            $class = "\\Orh\\Tapd\\Modules\\".ucfirst($module);
+            $this->binds[$module] = new $class($this->http);
+        }
+
+        return $this->binds[$module];
     }
 }
