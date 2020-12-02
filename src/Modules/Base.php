@@ -2,7 +2,7 @@
 
 namespace Orh\Tapd\Modules;
 
-use Orh\Tapd\Exceptions\{InvalidArgumentException, EmptyArgumentException};
+use Orh\Tapd\Exceptions\{EmptyArgumentException, InvalidArgumentException};
 use Orh\Tapd\Http;
 
 class Base

@@ -106,4 +106,44 @@ class Task extends Base
 
         return $this->http->get($uri, $query);
     }
+
+    /**
+     * 获取任务变更历史
+     * @url https://www.tapd.cn/help/view#1120003271001003026
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function changes(array $query): array
+    {
+        $uri = 'task_changes';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 获取任务变更次数
+     * @url https://www.tapd.cn/help/view#1120003271001003134
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function changesCount(array $query): array
+    {
+        $uri = 'task_changes/count';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
 }

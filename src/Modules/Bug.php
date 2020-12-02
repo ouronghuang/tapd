@@ -88,7 +88,7 @@ class Bug extends Base
 
     /**
      * 更新缺陷接口
-     * https://www.tapd.cn/help/view#1120003271001002672
+     * @url https://www.tapd.cn/help/view#1120003271001002672
      *
      * @param array $data
      *
@@ -121,6 +121,67 @@ class Bug extends Base
 
         $rules = [
             'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 获取缺陷变更历史接口
+     * @url https://www.tapd.cn/help/view#1120003271001001656
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function changes(array $query): array
+    {
+        $uri = 'bug_changes';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 获取缺陷变更历史数量
+     * @url https://www.tapd.cn/help/view#1120003271001001849
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function changesCount(array $query): array
+    {
+        $uri = 'bug_changes/count';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 获取缺陷与其它缺陷的所有关联关系
+     * @url https://www.tapd.cn/help/view#1120003271001003133
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function getLinkBugs(array $query): array
+    {
+        $uri = 'bug_changes/count';
+
+        $rules = [
+            'workspace_id',
+            'bug_id',
         ];
         $this->validate($query, $rules);
 

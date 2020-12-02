@@ -2,8 +2,7 @@
 
 namespace Orh\Tapd;
 
-use Orh\Tapd\Exceptions\InvalidModuleException;
-use Orh\Tapd\Exceptions\NullException;
+use Orh\Tapd\Exceptions\{InvalidModuleException, NullException};
 use Orh\Tapd\Modules\Base;
 
 class Tapd
@@ -14,13 +13,22 @@ class Tapd
      * @var array
      */
     protected $modules = [
+        'boardcard',
         'bug',
         'comment',
         'iteration',
+        'launchform',
+        'module',
         'relation',
+        'release',
+        'role',
         'story',
         'task',
+        'test',
+        'timesheet',
+        'version',
         'workflow',
+        'workspace',
     ];
 
     /**
