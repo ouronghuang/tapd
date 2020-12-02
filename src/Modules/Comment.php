@@ -25,8 +25,8 @@ class Comment extends Base
     }
 
     /**
-     * 获取评论接口
-     * @url https://www.tapd.cn/help/view#1120003271001003045
+     * 获取评论数量接口
+     * @url https://www.tapd.cn/help/view#1120003271001001452
      *
      * @param array $query
      *

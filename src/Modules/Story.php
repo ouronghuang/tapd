@@ -16,6 +16,11 @@ class Story extends Base
     {
         $uri = 'stories';
 
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
         return $this->http->get($uri, $query);
     }
 
@@ -30,6 +35,11 @@ class Story extends Base
     public function count(array $query = []): array
     {
         $uri = 'stories/count';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
 
         return $this->http->get($uri, $query);
     }

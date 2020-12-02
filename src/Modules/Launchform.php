@@ -45,8 +45,8 @@ class Launchform extends Base
     }
 
     /**
-     * 获取缺陷自定义字段配置
-     * @url https://www.tapd.cn/help/view#1120003271001001455
+     * 获取发布评审自定义字段配置
+     * @url https://www.tapd.cn/help/view#1120003271001002764
      *
      * @param array $query
      *
