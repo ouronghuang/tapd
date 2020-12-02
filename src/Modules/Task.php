@@ -4,5 +4,106 @@ namespace Orh\Tapd\Modules;
 
 class Task extends Base
 {
+    /**
+     * 获取任务接口
+     * @url https://www.tapd.cn/help/view#1120003271001003100
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function tasks(array $query): array
+    {
+        $uri = 'tasks';
 
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 任务计数接口
+     * @url https://www.tapd.cn/help/view#1120003271001001493
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function tasksCount(array $query): array
+    {
+        $uri = 'tasks/count';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
+
+    /**
+     * 新建任务接口
+     * @url https://www.tapd.cn/help/view#1120003271001002342
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function tasksStore(array $data): array
+    {
+        $uri = 'tasks';
+
+        $rules = [
+            'name',
+            'creator',
+            'workspace_id',
+        ];
+        $this->validate($data, $rules);
+
+        return $this->http->post($uri, $data);
+    }
+
+    /**
+     * 更新任务接口
+     * @url https://www.tapd.cn/help/view#1120003271001003169
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function tasksUpdate(array $data): array
+    {
+        $uri = 'tasks';
+
+        $rules = [
+            'id',
+            'workspace_id',
+        ];
+        $this->validate($data, $rules);
+
+        return $this->http->post($uri, $data);
+    }
+
+    /**
+     * 获取任务自定义字段配置
+     * @url https://www.tapd.cn/help/view#1120003271001001454
+     *
+     * @param array $query
+     *
+     * @return array
+     */
+    public function tasksCustomFieldsSettings(array $query): array
+    {
+        $uri = 'tasks/custom_fields_settings';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($query, $rules);
+
+        return $this->http->get($uri, $query);
+    }
 }
