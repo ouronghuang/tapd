@@ -39,11 +39,11 @@ class Base
     {
         foreach ($rules as $v) {
             if (! isset($arguments[$v])) {
-                throw new InvalidArgumentException("The {$v} field is required.");
+                throw new InvalidArgumentException("The [{$v}] field is required.");
             }
 
             if (! $arguments[$v]) {
-                throw new EmptyArgumentException("The {$v} field is empty.");
+                throw new EmptyArgumentException("The [{$v}] field is empty.");
             }
         }
     }

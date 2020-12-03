@@ -72,11 +72,11 @@ class Tapd
         $module = strtolower($module);
 
         if (! in_array($module, $this->modules)) {
-            throw new InvalidModuleException("Undefined module: {$module}.");
+            throw new InvalidModuleException("The module [{$module}] is undefined.");
         }
 
         if (! $this->http) {
-            throw new NullException('Http attribute is null, please set http first.');
+            throw new NullException('The http attribute is null, please set http first.');
         }
 
         if (! isset($this->binds[$module])) {
