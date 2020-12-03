@@ -4,6 +4,8 @@ namespace Orh\Tapd\Tests;
 
 use Orh\Tapd\Exceptions\{InvalidModuleException, NullException};
 use Orh\Tapd\Modules\Base;
+use Orh\Tapd\Tapd;
+use PHPUnit\Framework\TestCase;
 
 class TapdTest extends TestCase
 {
@@ -11,22 +13,27 @@ class TapdTest extends TestCase
     {
         $this->expectException(InvalidModuleException::class);
         $this->expectExceptionMessage('Undefined module: mock.');
-        $this->tapd->mock;
+
+        $tapd = new Tapd();
+        $tapd->mock;
     }
 
     public function testNullHttp()
     {
         $this->expectException(NullException::class);
         $this->expectExceptionMessage('Http attribute is null, please set http first.');
-        $this->tapd->story;
+
+        $tapd = new Tapd();
+        $tapd->story;
     }
 
     public function testUseModule()
     {
         $apiUser = 'mock-user';
         $apiPassword = 'mock-password';
-        $this->tapd->setHttp($apiUser, $apiPassword);
+        $tapd = new Tapd();
+        $tapd->setHttp($apiUser, $apiPassword);
 
-        $this->assertTrue($this->tapd->story instanceof Base);
+        $this->assertInstanceOf(Base::class, $tapd->story);
     }
 }
