@@ -83,7 +83,7 @@ class Http
             }
 
             return $data;
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
     }
