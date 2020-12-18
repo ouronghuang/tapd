@@ -3,7 +3,8 @@
 namespace Orh\Tapd;
 
 use GuzzleHttp\Client;
-use Orh\Tapd\Exceptions\{HttpException, RequestException};
+use Orh\Tapd\Exceptions\HttpException;
+use Orh\Tapd\Exceptions\RequestException;
 
 class Http
 {
@@ -15,16 +16,16 @@ class Http
     const BASE_URI = 'https://api.tapd.cn/';
 
     /**
-     * HTTP 实例
+     * HTTP 实例.
      *
      * @var Client
      */
     protected $client = null;
 
     /**
-     * 初始化设置
+     * 初始化设置.
      *
-     * @param string $apiUser API 帐号
+     * @param string $apiUser     API 帐号
      * @param string $apiPassword API 口令
      *
      * @return void
@@ -38,12 +39,10 @@ class Http
     }
 
     /**
-     * 生成认证信息
+     * 生成认证信息.
      *
-     * @param string $apiUser API 帐号
+     * @param string $apiUser     API 帐号
      * @param string $apiPassword API 口令
-     *
-     * @return array
      */
     protected function genAuthKey(string $apiUser, string $apiPassword): array
     {
@@ -59,11 +58,10 @@ class Http
     /**
      * 基础请求
      *
-     * @param string $method 请求方法
-     * @param string $uri 请求 uri
+     * @param string $method  请求方法
+     * @param string $uri     请求 uri
      * @param array  $options 请求项
      *
-     * @return array
      * @throws
      */
     public function request(string $method = 'GET', string $uri = '', array $options = []): array
@@ -72,7 +70,7 @@ class Http
             $response = $this->client->request($method, $uri, $options);
             $result = json_decode($response->getBody(), true);
 
-            if ($result['status'] != 1) {
+            if (1 != $result['status']) {
                 throw new RequestException($result['info']);
             }
 
@@ -91,10 +89,9 @@ class Http
     /**
      * GET 请求
      *
-     * @param string $uri 请求 uri
+     * @param string $uri   请求 uri
      * @param array  $query 表单参数
      *
-     * @return array
      * @throws
      */
     public function get(string $uri = '', array $query = []): array
@@ -110,10 +107,9 @@ class Http
     /**
      * POST 请求
      *
-     * @param string $uri 请求 uri
+     * @param string $uri  请求 uri
      * @param array  $data 请求项
      *
-     * @return array
      * @throws
      */
     public function post(string $uri = '', array $data = []): array

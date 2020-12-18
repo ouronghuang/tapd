@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Test extends Base
 {
     /**
-     * 获取测试用例接口
+     * 获取测试用例接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001911
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function list(array $query): array
     {
@@ -25,12 +22,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试用例数量
+     * 获取测试用例数量.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001653
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function count(array $query): array
     {
@@ -45,12 +39,9 @@ class Test extends Base
     }
 
     /**
-     * 创建测试用例
+     * 创建测试用例.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002222
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function store(array $data): array
     {
@@ -66,12 +57,9 @@ class Test extends Base
     }
 
     /**
-     * 更新测试用例
+     * 更新测试用例.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001910
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function update(array $data): array
     {
@@ -87,12 +75,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试计划接口
+     * 获取测试计划接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001654
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function plans(array $query): array
     {
@@ -107,12 +92,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试计划数量
+     * 获取测试计划数量.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001655
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function plansCount(array $query): array
     {
@@ -127,12 +109,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试用例目录接口
+     * 获取测试用例目录接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001912
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function categories(array $query): array
     {
@@ -147,12 +126,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试用例目录数量
+     * 获取测试用例目录数量.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001713
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function categoriesCount(array $query): array
     {
@@ -167,12 +143,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试用例执行结果
+     * 获取测试用例执行结果.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003044
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function result(array $query): array
     {
@@ -189,12 +162,9 @@ class Test extends Base
     }
 
     /**
-     * 获取测试用例关联的需求接口
+     * 获取测试用例关联的需求接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003126
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function getStoryByTcaseId(array $query): array
     {

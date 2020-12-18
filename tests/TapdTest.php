@@ -2,7 +2,10 @@
 
 namespace Orh\Tapd\Tests;
 
-use Orh\Tapd\Exceptions\{EmptyArgumentException, InvalidArgumentException, InvalidModuleException, NullException};
+use Orh\Tapd\Exceptions\EmptyArgumentException;
+use Orh\Tapd\Exceptions\InvalidArgumentException;
+use Orh\Tapd\Exceptions\InvalidModuleException;
+use Orh\Tapd\Exceptions\NullException;
 use Orh\Tapd\Modules\Base;
 use Orh\Tapd\Tapd;
 use PHPUnit\Framework\TestCase;

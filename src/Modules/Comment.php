@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Comment extends Base
 {
     /**
-     * 获取评论接口
+     * 获取评论接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003045
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function list(array $query): array
     {
@@ -25,12 +22,9 @@ class Comment extends Base
     }
 
     /**
-     * 获取评论数量接口
+     * 获取评论数量接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001452
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function count(array $query): array
     {
@@ -45,12 +39,9 @@ class Comment extends Base
     }
 
     /**
-     * 添加评论接口
+     * 添加评论接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003046
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function store(array $data): array
     {
@@ -69,12 +60,9 @@ class Comment extends Base
     }
 
     /**
-     * 更新评论接口
+     * 更新评论接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002786
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function update(array $data): array
     {

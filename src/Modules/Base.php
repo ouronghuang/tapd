@@ -2,22 +2,21 @@
 
 namespace Orh\Tapd\Modules;
 
-use Orh\Tapd\Exceptions\{EmptyArgumentException, InvalidArgumentException};
+use Orh\Tapd\Exceptions\EmptyArgumentException;
+use Orh\Tapd\Exceptions\InvalidArgumentException;
 use Orh\Tapd\Http;
 
 class Base
 {
     /**
-     * HTTP 实例
+     * HTTP 实例.
      *
      * @var Http
      */
     protected $http = null;
 
     /**
-     * 初始化设置
-     *
-     * @param Http $http
+     * 初始化设置.
      *
      * @return void
      */
@@ -27,12 +26,10 @@ class Base
     }
 
     /**
-     * 校验参数是否存在
-     *
-     * @param array $arguments
-     * @param array $rules
+     * 校验参数是否存在.
      *
      * @return void
+     *
      * @throws
      */
     protected function validate(array $arguments, array $rules)

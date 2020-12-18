@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Task extends Base
 {
     /**
-     * 获取任务接口
+     * 获取任务接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003100
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function list(array $query): array
     {
@@ -25,12 +22,9 @@ class Task extends Base
     }
 
     /**
-     * 任务计数接口
+     * 任务计数接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001493
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function count(array $query): array
     {
@@ -45,12 +39,9 @@ class Task extends Base
     }
 
     /**
-     * 新建任务接口
+     * 新建任务接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002342
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function store(array $data): array
     {
@@ -67,12 +58,9 @@ class Task extends Base
     }
 
     /**
-     * 更新任务接口
+     * 更新任务接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003169
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function update(array $data): array
     {
@@ -88,12 +76,9 @@ class Task extends Base
     }
 
     /**
-     * 获取任务自定义字段配置
+     * 获取任务自定义字段配置.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001454
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function customFieldsSettings(array $query): array
     {
@@ -108,12 +93,9 @@ class Task extends Base
     }
 
     /**
-     * 获取任务变更历史
+     * 获取任务变更历史.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003026
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function changes(array $query): array
     {
@@ -128,12 +110,9 @@ class Task extends Base
     }
 
     /**
-     * 获取任务变更次数
+     * 获取任务变更次数.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003134
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function changesCount(array $query): array
     {

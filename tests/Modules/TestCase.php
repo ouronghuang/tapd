@@ -13,7 +13,7 @@ class TestCase extends BaseTestCase
     {
         $class = get_class($this);
         $class = basename(str_replace('\\', '/', $class));
-        $module = "\\Orh\\Tapd\\Modules\\".substr($class, 0, strlen($class) - 4);
+        $module = '\\Orh\\Tapd\\Modules\\'.substr($class, 0, strlen($class) - 4);
 
         $http = \Mockery::mock(Http::class);
         $http->allows()->get(new AnyArgs())->andReturn($data);

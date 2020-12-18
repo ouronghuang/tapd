@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Workspace extends Base
 {
     /**
-     * 添加公司成员到指定项目
+     * 添加公司成员到指定项目.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001484
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function addMemberByNick(array $data): array
     {
@@ -27,12 +24,9 @@ class Workspace extends Base
     }
 
     /**
-     * 获取公司下或者项目下成员
+     * 获取公司下或者项目下成员.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003132
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function users(array $query): array
     {
@@ -47,12 +41,9 @@ class Workspace extends Base
     }
 
     /**
-     * 获取公司项目列表
+     * 获取公司项目列表.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003174
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function projects(array $query): array
     {

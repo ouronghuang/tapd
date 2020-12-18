@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Module extends Base
 {
     /**
-     * 获取模块接口
+     * 获取模块接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002218
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function list(array $query): array
     {
@@ -25,12 +22,9 @@ class Module extends Base
     }
 
     /**
-     * 获取模块数量接口
+     * 获取模块数量接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002219
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function count(array $query): array
     {
@@ -45,12 +39,9 @@ class Module extends Base
     }
 
     /**
-     * 新建模块接口
+     * 新建模块接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003028
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function store(array $data): array
     {
@@ -66,12 +57,9 @@ class Module extends Base
     }
 
     /**
-     * 更新模块接口
+     * 更新模块接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003027
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function update(array $data): array
     {

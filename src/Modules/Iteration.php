@@ -5,12 +5,9 @@ namespace Orh\Tapd\Modules;
 class Iteration extends Base
 {
     /**
-     * 获取迭代接口
+     * 获取迭代接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002220
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function list(array $query): array
     {
@@ -25,12 +22,9 @@ class Iteration extends Base
     }
 
     /**
-     * 迭代计数接口
+     * 迭代计数接口.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001002221
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function count(array $query): array
     {
@@ -45,12 +39,9 @@ class Iteration extends Base
     }
 
     /**
-     * 创建迭代
+     * 创建迭代.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003135
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function store(array $data): array
     {
@@ -69,12 +60,9 @@ class Iteration extends Base
     }
 
     /**
-     * 更新迭代
+     * 更新迭代.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001003136
-     *
-     * @param array $data
-     *
-     * @return array
      */
     public function update(array $data): array
     {
@@ -91,12 +79,9 @@ class Iteration extends Base
     }
 
     /**
-     * 获取迭代自定义字段配置
+     * 获取迭代自定义字段配置.
+     *
      * @url https://www.tapd.cn/help/view#1120003271001001457
-     *
-     * @param array $query
-     *
-     * @return array
      */
     public function customFieldsSettings(array $query): array
     {

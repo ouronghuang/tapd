@@ -2,13 +2,14 @@
 
 namespace Orh\Tapd;
 
-use Orh\Tapd\Exceptions\{InvalidModuleException, NullException};
+use Orh\Tapd\Exceptions\InvalidModuleException;
+use Orh\Tapd\Exceptions\NullException;
 use Orh\Tapd\Modules\Base;
 
 class Tapd
 {
     /**
-     * 可用模块
+     * 可用模块.
      *
      * @var array
      */
@@ -32,23 +33,23 @@ class Tapd
     ];
 
     /**
-     * 绑定模块
+     * 绑定模块.
      *
      * @var array
      */
     protected $binds = [];
 
     /**
-     * HTTP 实例
+     * HTTP 实例.
      *
      * @var Http
      */
     protected $http = null;
 
     /**
-     * 初始化设置
+     * 初始化设置.
      *
-     * @param string $apiUser API 帐号
+     * @param string $apiUser     API 帐号
      * @param string $apiPassword API 口令
      *
      * @return void
@@ -60,11 +61,8 @@ class Tapd
     }
 
     /**
-     * 动态加载模块
+     * 动态加载模块.
      *
-     * @param string $module
-     *
-     * @return Base
      * @throws
      */
     public function __get(string $module): Base
@@ -80,7 +78,7 @@ class Tapd
         }
 
         if (! isset($this->binds[$module])) {
-            $class = "\\Orh\\Tapd\\Modules\\".ucfirst($module);
+            $class = '\\Orh\\Tapd\\Modules\\'.ucfirst($module);
             $this->binds[$module] = new $class($this->http);
         }
 
