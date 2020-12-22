@@ -35,8 +35,8 @@ use Orh\Tapd\Tapd;
 $apiUser = '';
 $apiPassword = '';
 
-$tapd = new Tapd();
-$tapd->setHttp($apiUser, $apiPassword);
+$tapd = new Tapd($apiUser, $apiPassword);
+// $tapd->setHttp($apiUser, $apiPassword);
 ```
 
 2. 按模块使用

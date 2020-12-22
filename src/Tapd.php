@@ -3,7 +3,6 @@
 namespace Orh\Tapd;
 
 use Orh\Tapd\Exceptions\InvalidModuleException;
-use Orh\Tapd\Exceptions\NullException;
 use Orh\Tapd\Modules\Base;
 
 class Tapd
@@ -46,14 +45,11 @@ class Tapd
      */
     protected $http = null;
 
-    /**
-     * 初始化设置.
-     *
-     * @param string $apiUser     API 帐号
-     * @param string $apiPassword API 口令
-     *
-     * @return void
-     */
+    public function __construct(string $apiUser, string $apiPassword)
+    {
+        $this->setHttp($apiUser, $apiPassword);
+    }
+
     public function setHttp(string $apiUser, string $apiPassword)
     {
         $this->http = new Http($apiUser, $apiPassword);
@@ -71,10 +67,6 @@ class Tapd
 
         if (! in_array($module, $this->modules)) {
             throw new InvalidModuleException("The module [{$module}] is undefined.");
-        }
-
-        if (! $this->http) {
-            throw new NullException('The http attribute is null, please set http first.');
         }
 
         if (! isset($this->binds[$module])) {

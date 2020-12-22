@@ -15,11 +15,6 @@ class Base
      */
     protected $http = null;
 
-    /**
-     * 初始化设置.
-     *
-     * @return void
-     */
     public function __construct(Http $http)
     {
         $this->http = $http;
