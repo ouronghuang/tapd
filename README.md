@@ -1,20 +1,23 @@
 <h1 align="center">
-    Tencent Tapd Api For PHP
+  Tencent Tapd Api For PHP
 </h1>
 
 <p align="center">
-    <a href="https://packagist.org/packages/orh/tapd">
-        <img alt="Packagist PHP Version Support" src="https://img.shields.io/packagist/php-v/orh/tapd">
-    </a>
-    <a href="https://packagist.org/packages/orh/tapd">
-        <img alt="Packagist Version" src="https://img.shields.io/packagist/v/orh/tapd?color=df8057">
-    </a>
-    <a href="https://packagist.org/packages/orh/tapd">
-        <img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/orh/tapd">
-    </a>
-    <a href="https://github.com/ouronghuang/tapd">
-        <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/tapd">
-    </a>
+  <a href="https://packagist.org/packages/orh/tapd">
+    <img alt="Packagist PHP Version Support" src="https://img.shields.io/packagist/php-v/orh/tapd">
+  </a>
+  <a href="https://packagist.org/packages/orh/tapd">
+    <img alt="Packagist Version" src="https://img.shields.io/packagist/v/orh/tapd?color=df8057">
+  </a>
+  <a href="https://packagist.org/packages/orh/tapd">
+    <img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/orh/tapd">
+  </a>
+  <a href="https://github.com/ouronghuang/tapd">
+    <img alt="StyleCI build status" src="https://github.styleci.io/repos/317795483/shield?style=flat">
+  </a>
+  <a href="https://github.com/ouronghuang/tapd">
+    <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/tapd">
+  </a>
 </p>
 
 按照 [TAPD API 文档](https://www.tapd.cn/help/view#1120003271001002318) 实现了所有接口
