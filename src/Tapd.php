@@ -29,6 +29,7 @@ class Tapd
         'version',
         'workflow',
         'workspace',
+        'wiki',
     ];
 
     /**

@@ -159,10 +159,16 @@ $tapd->story->list($query);
 ├── workflow「工作流」
 │   └── statusMap()「获取工作流状态中英文名对应关系」
 │
-└── workspace「公司」
-    ├── addMemberByNick()「添加公司成员到指定项目」
-    ├── users()「获取公司下或者项目下成员」
-    └── projects()「获取公司项目列表」
+├─── workspace「公司」
+│   ├── addMemberByNick()「添加公司成员到指定项目」
+│   ├── users()「获取公司下或者项目下成员」
+│   └── projects()「获取公司项目列表」
+│
+└── wiki「wiki」
+    ├── list()「获取wiki接口」
+    ├── count()「获取wiki数量接口」
+    ├── store()「创建wiki接口」
+    └── update()「更新wiki接口」
 ```
 
 ## License
