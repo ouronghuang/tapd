@@ -122,6 +122,7 @@ $tapd->story->list($query);
 │   ├── categoriesCount()「获取需求分类数量」
 │   ├── getStoryTcase()「获取需求与测试用例关联关系接口」
 │   └── updateStorySelectFieldOptions()「更新需求下拉类型自定义字段候选值」
+│   └── getFieldsInfo()「获取需求所有字段及候选值」
 │
 ├── task「任务」
 │   ├── list()「获取任务接口」
