@@ -129,4 +129,14 @@ class StoryTest extends TestCase
 
         $this->assertSame([__METHOD__], $story->updateStorySelectFieldOptions($data));
     }
+
+    public function testGetFieldsInfo()
+    {
+        $story = $this->getModule([__METHOD__]);
+        $data = [
+            'workspace_id' => 'mock',
+        ];
+
+        $this->assertSame([__METHOD__], $story->getFieldsInfo($data));
+    }
 }

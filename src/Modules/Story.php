@@ -213,4 +213,21 @@ class Story extends Base
 
         return $this->http->post($uri, $data);
     }
+
+    /**
+     * 获取需求所有字段及候选值
+     *
+     * @url https://www.tapd.cn/help/show#1120003271001000817
+     */
+    public function getFieldsInfo(array $data): array
+    {
+        $uri = 'stories/get_fields_info';
+
+        $rules = [
+            'workspace_id',
+        ];
+        $this->validate($data, $rules);
+
+        return $this->http->get($uri, $data);
+    }
 }
